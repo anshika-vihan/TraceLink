@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TraceLink | Lost & Found Portal</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar">
+
+        <div class="nav-container">
+
+            <a href="#home" class="logo">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-link"></i>
+                </div>
+
+                <div>
+                    <span class="logo-text">TraceLink</span>
+                    <small>Lost & Found Portal</small>
+                </div>
+            </a>
+
+
+            <div class="nav-links" id="navLinks">
+
+                <a href="#home">Home</a>
+                <a href="#browse">Browse Items</a>
+                <a href="#how-it-works">How It Works</a>
+
+                <button class="nav-report-btn" id="openReportBtn">
+                    <i class="fa-solid fa-plus"></i>
+                    Report Item
+                </button>
+
+            </div>
+
+
+            <button class="menu-btn" id="menuBtn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+        </div>
+
+    </nav>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <div class="hero-badge">
+                <i class="fa-solid fa-heart"></i>
+                Connecting Lost Items With Their Owners
+            </div>
+
+            <h1>
+                Lost Something?
+                <span>Let's Find It Together.</span>
+            </h1>
+
+            <p>
+                TraceLink makes it easy to report, search, and manage
+                lost and found items on campus.
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <button class="primary-btn" id="reportLostBtn">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    Report Lost Item
+                </button>
+
+                <button class="secondary-btn" id="reportFoundBtn">
+                    <i class="fa-solid fa-box-open"></i>
+                    Report Found Item
+                </button>
+
+            </div>
+
+
+            <div class="hero-stats">
+
+                <div class="hero-stat">
+                    <strong id="heroTotal">0</strong>
+                    <span>Total Reports</span>
+                </div>
+
+                <div class="hero-stat">
+                    <strong id="heroReturned">0</strong>
+                    <span>Items Returned</span>
+                </div>
+
+                <div class="hero-stat">
+                    <strong>24/7</strong>
+                    <span>Easy Access</span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-visual">
+
+            <div class="floating-card card-one">
+                <i class="fa-solid fa-mobile-screen"></i>
+                <div>
+                    <strong>Phone Found</strong>
+                    <span>Electronics</span>
+                </div>
+            </div>
+
+
+            <div class="main-hero-card">
+
+                <div class="hero-card-top">
+                    <div class="search-circle">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+
+                    <span>TraceLink</span>
+                </div>
+
+
+                <div class="illustration">
+
+                    <div class="illustration-circle">
+                        <i class="fa-solid fa-box-open"></i>
+                    </div>
+
+                    <div class="connection-line"></div>
+
+                    <div class="person person-left">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+                    <div class="person person-right">
+                        <i class="fa-solid fa-user-check"></i>
+                    </div>
+
+                </div>
+
+
+                <div class="hero-card-bottom">
+
+                    <div>
+                        <strong>Lost → Found → Returned</strong>
+                        <span>Every item has a journey.</span>
+                    </div>
+
+                    <div class="check-icon">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="floating-card card-two">
+                <i class="fa-solid fa-check-circle"></i>
+                <div>
+                    <strong>Item Returned!</strong>
+                    <span>Successfully matched</span>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= STATISTICS ================= -->
+
+    <section class="stats-section">
+
+        <div class="stats-container">
+
+            <div class="stat-card">
+
+                <div class="stat-icon total-icon">
+                    <i class="fa-solid fa-boxes-stacked"></i>
+                </div>
+
+                <div>
+                    <h3 id="totalReports">0</h3>
+                    <p>Total Reports</p>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon lost-icon">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                </div>
+
+                <div>
+                    <h3 id="lostCount">0</h3>
+                    <p>Lost Items</p>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon found-icon">
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+
+                <div>
+                    <h3 id="foundCount">0</h3>
+                    <p>Found Items</p>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon returned-icon">
+                    <i class="fa-solid fa-handshake"></i>
+                </div>
+
+                <div>
+                    <h3 id="returnedCount">0</h3>
+                    <p>Returned Items</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= BROWSE ITEMS ================= -->
+
+    <section class="browse-section" id="browse">
+
+        <div class="section-heading">
+
+            <div>
+                <span class="section-tag">EXPLORE REPORTS</span>
+
+                <h2>Find What You're Looking For</h2>
+
+                <p>
+                    Search through lost and found reports and discover
+                    items that may belong to you.
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- SEARCH AND FILTERS -->
+
+        <div class="filter-container">
+
+            <div class="search-box">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search by item name or description..."
+                >
+
+            </div>
+
+
+            <select id="categoryFilter">
+
+                <option value="all">All Categories</option>
+                <option value="Electronics">Electronics</option>
+                <option value="Documents">Documents</option>
+                <option value="Accessories">Accessories</option>
+                <option value="Keys">Keys</option>
+                <option value="Clothing">Clothing</option>
+                <option value="Books">Books</option>
+                <option value="Other">Other</option>
+
+            </select>
+
+
+            <select id="statusFilter">
+
+                <option value="all">All Status</option>
+                <option value="Lost">Lost</option>
+                <option value="Found">Found</option>
+                <option value="Returned">Returned</option>
+
+            </select>
+
+        </div>
+
+
+        <!-- ITEMS -->
+
+        <div class="items-grid" id="itemsContainer">
+
+            <!-- JavaScript will add Firebase items here -->
+
+        </div>
+
+
+        <!-- EMPTY STATE -->
+
+        <div class="empty-state" id="emptyState">
+
+            <div class="empty-icon">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+
+            <h3>No Items Found</h3>
+
+            <p>
+                Try changing your search or filters.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= HOW IT WORKS ================= -->
+
+    <section class="how-section" id="how-it-works">
+
+        <div class="section-heading center-heading">
+
+            <span class="section-tag">SIMPLE PROCESS</span>
+
+            <h2>How TraceLink Works</h2>
+
+            <p>
+                From reporting an item to returning it to its owner,
+                everything happens in a few simple steps.
+            </p>
+
+        </div>
+
+
+        <div class="steps-container">
+
+
+            <div class="step-card">
+
+                <div class="step-number">01</div>
+
+                <div class="step-icon">
+                    <i class="fa-solid fa-file-circle-plus"></i>
+                </div>
+
+                <h3>Report Item</h3>
+
+                <p>
+                    Submit details about a lost or found item,
+                    including an image.
+                </p>
+
+            </div>
+
+
+            <div class="step-arrow">
+                <i class="fa-solid fa-arrow-right"></i>
+            </div>
+
+
+            <div class="step-card">
+
+                <div class="step-number">02</div>
+
+                <div class="step-icon">
+                    <i class="fa-solid fa-database"></i>
+                </div>
+
+                <h3>Store in Cloud</h3>
+
+                <p>
+                    Your report and image are securely stored
+                    using cloud storage.
+                </p>
+
+            </div>
+
+
+            <div class="step-arrow">
+                <i class="fa-solid fa-arrow-right"></i>
+            </div>
+
+
+            <div class="step-card">
+
+                <div class="step-number">03</div>
+
+                <div class="step-icon">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+
+                <h3>Search & Match</h3>
+
+                <p>
+                    Users can search and filter items
+                    to find possible matches.
+                </p>
+
+            </div>
+
+
+            <div class="step-arrow">
+                <i class="fa-solid fa-arrow-right"></i>
+            </div>
+
+
+            <div class="step-card">
+
+                <div class="step-number">04</div>
+
+                <div class="step-icon">
+                    <i class="fa-solid fa-handshake"></i>
+                </div>
+
+                <h3>Return Item</h3>
+
+                <p>
+                    Update the report once the item
+                    successfully reaches its owner.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FEATURES ================= -->
+
+    <section class="features-section">
+
+        <div class="section-heading center-heading">
+
+            <span class="section-tag">MAIN FEATURES</span>
+
+            <h2>Everything You Need in One Place</h2>
+
+        </div>
+
+
+        <div class="features-grid">
+
+
+            <div class="feature-card">
+
+                <i class="fa-solid fa-file-circle-plus"></i>
+
+                <h3>Report Lost</h3>
+
+                <p>Submit lost item details with image upload.</p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <i class="fa-solid fa-box-open"></i>
+
+                <h3>Report Found</h3>
+
+                <p>Report found items for others to claim.</p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <h3>Search Items</h3>
+
+                <p>Find items by name or description instantly.</p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <i class="fa-solid fa-filter"></i>
+
+                <h3>Filter Items</h3>
+
+                <p>Filter reports by category and status.</p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <i class="fa-solid fa-image"></i>
+
+                <h3>Image Preview</h3>
+
+                <p>Visual identification makes searching easier.</p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <i class="fa-solid fa-pen-to-square"></i>
+
+                <h3>Edit Reports</h3>
+
+                <p>Update item details whenever necessary.</p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <i class="fa-solid fa-trash"></i>
+
+                <h3>Delete Reports</h3>
+
+                <p>Remove duplicate or resolved reports.</p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <i class="fa-solid fa-check"></i>
+
+                <h3>Mark Returned</h3>
+
+                <p>Update status once an item is claimed.</p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CTA ================= -->
+
+    <section class="cta-section">
+
+        <div class="cta-content">
+
+            <div>
+
+                <span class="section-tag light-tag">
+                    LOST SOMETHING?
+                </span>
+
+                <h2>Let's Help You Find It.</h2>
+
+                <p>
+                    Create a report and let the TraceLink community help.
+                </p>
+
+            </div>
+
+
+            <button class="white-btn" id="ctaReportBtn">
+
+                <i class="fa-solid fa-plus"></i>
+
+                Report an Item
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+
+                <div class="logo">
+
+                    <div class="logo-icon">
+                        <i class="fa-solid fa-link"></i>
+                    </div>
+
+                    <div>
+                        <span class="logo-text">TraceLink</span>
+                        <small>Connecting Lost Items With Their Owners</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <p>
+                A simple digital solution for reporting,
+                searching and managing lost and found items.
+            </p>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>© 2026 TraceLink | Lost & Found Portal</span>
+
+            <span>Mini Project</span>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ================= REPORT MODAL ================= -->
+
+    <div class="modal" id="reportModal">
+
+        <div class="modal-content">
+
+            <button class="close-btn" id="closeModal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+
+            <div class="modal-header">
+
+                <span class="section-tag">CREATE REPORT</span>
+
+                <h2 id="modalTitle">Report an Item</h2>
+
+                <p>
+                    Enter the details below to add your item to TraceLink.
+                </p>
+
+            </div>
+
+
+            <form id="itemForm">
+
+
+                <!-- Report Type -->
+
+                <div class="form-group">
+
+                    <label>Report Type</label>
+
+                    <div class="type-buttons">
+
+                        <button
+                            type="button"
+                            class="type-btn active-type"
+                            data-type="Lost"
+                            id="lostTypeBtn"
+                        >
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            Lost Item
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="type-btn"
+                            data-type="Found"
+                            id="foundTypeBtn"
+                        >
+                            <i class="fa-solid fa-box-open"></i>
+                            Found Item
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Hidden Report Type -->
+
+                <input
+                    type="hidden"
+                    id="reportType"
+                    value="Lost"
+                >
+
+
+                <!-- Item Name -->
+
+                <div class="form-group">
+
+                    <label for="itemName">
+                        Item Name *
+                    </label>
+
+                    <input
+                        type="text"
+                        id="itemName"
+                        placeholder="Example: Black Wallet"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Description -->
+
+                <div class="form-group">
+
+                    <label for="description">
+                        Description *
+                    </label>
+
+                    <textarea
+                        id="description"
+                        rows="4"
+                        placeholder="Describe the item..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <!-- Category and Location -->
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="category">
+                            Category *
+                        </label>
+
+                        <select id="category" required>
+
+                            <option value="">Select Category</option>
+
+                            <option value="Electronics">
+                                Electronics
+                            </option>
+
+                            <option value="Documents">
+                                Documents
+                            </option>
+
+                            <option value="Accessories">
+                                Accessories
+                            </option>
+
+                            <option value="Keys">
+                                Keys
+                            </option>
+
+                            <option value="Clothing">
+                                Clothing
+                            </option>
+
+                            <option value="Books">
+                                Books
+                            </option>
+
+                            <option value="Other">
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="location">
+                            Location *
+                        </label>
+
+                        <input
+                            type="text"
+                            id="location"
+                            placeholder="Example: Library"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- Date -->
+
+                <div class="form-group">
+
+                    <label for="date">
+                        Date *
+                    </label>
+
+                    <input
+                        type="date"
+                        id="date"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Image Upload -->
+
+                <div class="form-group">
+
+                    <label for="image">
+                        Upload Image
+                    </label>
+
+                    <div class="upload-area">
+
+                        <input
+                            type="file"
+                            id="image"
+                            accept="image/*"
+                        >
+
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+
+                        <span>
+                            Click to upload an image
+                        </span>
+
+                        <small>
+                            JPG, PNG or JPEG
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Image Preview -->
+
+                <div class="image-preview-container">
+
+                    <img
+                        id="imagePreview"
+                        src=""
+                        alt="Image Preview"
+                    >
+
+                </div>
+
+
+                <!-- Submit -->
+
+                <button
+                    type="submit"
+                    class="submit-btn"
+                    id="submitBtn"
+                >
+
+                    <i class="fa-solid fa-cloud-arrow-up"></i>
+
+                    Submit Report
+
+                </button>
+
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= IMAGE MODAL ================= -->
+
+    <div class="image-modal" id="imageModal">
+
+        <button id="closeImageModal">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <img id="fullImage" src="" alt="Full Item Image">
+
+    </div>
+
+
+    <!-- ================= TOAST ================= -->
+
+    <div class="toast" id="toast">
+
+        <i class="fa-solid fa-circle-check"></i>
+
+        <span id="toastMessage">
+            Successfully completed!
+        </span>
+
+    </div>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script type="module" src="script.js"></script>
+
+</body>
+
+</html>
